@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SimpleCalculator</string>
+    <string name="number_1">Number 1:</string>
+    <string name="number_2">Number 2:</string>
+    <string name="number1InputHint">Enter first number</string>
+    <string name="number2InputHint">Enter second number</string>
+    <string name="resultLabelText">Result</string>
+    <string name="resultOutputText">resultHere</string>
+    <string name="divideButtonText">/</string>
+    <string name="minusButtonText">-</string>
+    <string name="plusButtonText">+</string>
+    <string name="timesButtonText">*</string>
+</resources>

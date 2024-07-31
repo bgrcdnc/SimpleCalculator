@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="1dp"
+        tools:layout_editor_absoluteY="1dp">
+
+        <TextView
+            android:id="@+id/number1Label"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/number_1"
+            android:textSize="20sp"
+            app:flow_horizontalAlign="center" />
+
+        <EditText
+            android:id="@+id/number1Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/number1InputHint"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:flow_horizontalAlign="center" />
+
+        <TextView
+            android:id="@+id/number2Label"
+            android:layout_width="209dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/number_2"
+            android:textSize="20sp"
+            app:flow_horizontalAlign="center" />
+
+        <EditText
+            android:id="@+id/number2Input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/number2InputHint"
+            android:inputType="number"
+            android:minHeight="48dp"
+            android:textColorHint="#546E7A"
+            app:flow_horizontalAlign="center" />
+
+        <TextView
+            android:id="@+id/resultLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
+            android:text="@string/resultLabelText"
+            android:textSize="20sp"
+            app:flow_horizontalAlign="center" />
+
+        <TextView
+            android:id="@+id/resultOutput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:text="@string/resultOutputText"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            app:flow_horizontalAlign="center" />
+
+        <LinearLayout
+            android:id="@+id/operatorButtonsLayout"
+            style="?android:attr/buttonBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="45dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/sumButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:onClick="calculate"
+                android:text="@string/plusButtonText"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:flow_horizontalAlign="center" />
+
+            <Button
+                android:id="@+id/deductButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:onClick="calculate"
+                android:text="@string/minusButtonText"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:flow_horizontalAlign="center" />
+
+            <Button
+                android:id="@+id/multiplyButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:onClick="calculate"
+                android:text="@string/timesButtonText"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:flow_horizontalAlign="center" />
+
+            <Button
+                android:id="@+id/divideButton"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="calculate"
+                android:text="@string/divideButtonText"
+                android:textAlignment="center"
+                android:textSize="20sp"
+                app:flow_horizontalAlign="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
