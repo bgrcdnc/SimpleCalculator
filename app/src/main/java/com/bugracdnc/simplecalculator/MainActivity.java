@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         number1Text = findViewById(R.id.number1Input);
         number2Text = findViewById(R.id.number2Input);
         resultText = findViewById(R.id.resultOutput);
+        resultText.setText("");
 
         operationMap = new HashMap<>();
         operationMap.put(R.id.sumButton, Integer::sum);
@@ -43,11 +44,31 @@ public class MainActivity extends AppCompatActivity {
         operationMap.put(R.id.divideButton, (a, b) -> a / b);
     }
 
-    public int[] getValues() {
-        int[] values = new int[2];
+    public boolean isValidInput(String[] inputs) {
+        for (String input : inputs) {
+            if (input.matches(""))
+                return false;
+        }
+        return true;
+    }
 
-        values[0] = Integer.parseInt(number1Text.getText().toString());
-        values[1] = Integer.parseInt(number2Text.getText().toString());
+    public int[] getValues() {
+        int numInputs = 2;
+        String[] inputs = new String[numInputs];
+        int[] values = new int[numInputs + 1];
+        values[0] = 1;
+
+        inputs[0] = number1Text.getText().toString();
+        inputs[1] = number2Text.getText().toString();
+
+        if (isValidInput(inputs)) {
+            for (int i = 0; i < numInputs; i++) {
+                values[i + 1] = Integer.parseInt(inputs[i]);
+            }
+        } else {
+            resultText.setText(R.string.wrong_input_error);
+            values[0] = 0;
+        }
 
         return values;
     }
@@ -58,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void calculate(View view) {
         int[] values = getValues();
-        resultText.setText(performCalculation(values[0], values[1], Objects.requireNonNull(operationMap.get(view.getId()))));
+        if(values[0] > 0)
+            resultText.setText(performCalculation(values[1], values[2], Objects.requireNonNull(operationMap.get(view.getId()))));
     }
 }
